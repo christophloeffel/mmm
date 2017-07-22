@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+ 
+    <meta charset="utf-8">
+    <title>D3</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="d3\d3.js"></script>
+  
+  
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Doppio+One" rel="stylesheet">
+ <style>
+ 
+ 
+ body {
+ font-family: 'Doppio One', sans-serif;
+    background-color: black;
+}
+ 
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.25;
+}
+ 
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+ 
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 220px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+
+.textLabel {
+ pointer-events: none;
+ }
+ .regNode {
+ pointer-events: none;
+ }
+	  </style>
+  </head>
+  <body>
+ 
+
+    <script>
+var minRadius = 4;
+var maxRadius = 8;
+var w = 1200;
+var h = 600;
+var svg = d3.select("body").append("svg")
+	.attr("width", w)
+	.attr("height", h);
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);	
+var nodesData;
+var linksData;
+var bounceDistanceFactor = 1.3; // Increase min-node Distane by factor x
+
+//Declare Scales
+
+var rScale;
+var cScale =d3.scaleOrdinal(d3.schemeCategory10);
+d3.csv("nodes2.csv", function(nData){
+nodesData = nData;
+
+d3.csv("links.csv", function(lData){
+
+linksData = lData;
+
+//BUILD SCALES
+
+rScale = d3.scaleLinear()
+	.domain([4,8])
+	.range([minRadius, maxRadius]);
+//
+
+
+
+loadSimulation();
+
+});
+
+
+});
+
+
+
+
+function loadSimulation(){	
+
+ var simulation  = d3.forceSimulation()
+					.nodes(nodesData);
+
+simulation
+	.force("charge_force", d3.forceManyBody().distanceMax(400).distanceMin(50))//
+	.force("y", d3.forceY(h/2).strength(0.05))
+	.force("center_force", d3.forceCenter(w/2, h/2))
+	.force("no_bounce", d3.forceCollide(function(d){if (d.Type == "area")
+		{return 20*bounceDistanceFactor;}
+		if (d.Type == "mmm")
+		{return 40*bounceDistanceFactor;}
+		
+		return rScale(d.ECTS)*bounceDistanceFactor;}))
+	.force("link", d3.forceLink(linksData).id(function(d){return d.ID;}));
+
+simulation.on("tick", tickActions);
+
+
+// draw Lines	
+
+var link = svg.append("g")
+	.attr("class", "links")
+	.selectAll("line")
+	.data(linksData)
+	.enter()
+	.append("line")
+	.attr("stroke-width", 2)
+	.style("stroke", "#ff7f0e");
+
+// draw circles
+
+var node = svg.append("g")
+	.attr("class", "nodes")
+	.selectAll("circle")
+	.data(nodesData)
+	.enter()
+	.append("circle")
+	.style("stroke",function(d){
+	
+	if (d.Language == "d"){return"white"}
+	if (d.Language == "ed"){return"grey"}
+	return "black";
+	})
+	.style("stroke-width",function(d){
+	
+	if (d.Language == "d"){return 2}
+	if (d.Language == "ed"){return 2}
+	return 0;
+	})
+	.attr("r",function(d){
+		if (d.Type == "area")
+		{return 20;}
+		if (d.Type == "mmm")
+		{return 40;}
+		
+		return rScale(d.ECTS);
+
+	})
+	.attr("fill", function(d){return cScale(d.Area);})
+	.on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html(d.ID + " (" + d.ECTS + " ECTS)" + "<br/>"  + d.Name)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+});
+
+var regNode =  svg.append("g")
+	.attr("class", "regNode")
+	.selectAll("circle")
+	.data(nodesData)
+	.enter()
+	.append("circle")
+	.attr("r", function(d){
+	if (d.Anmeldepflicht == "j"){return 2;}
+	return 0;
+	})
+	.attr("fill", "black");
+
+
+
+var label = svg.selectAll("text")
+                    .data(nodesData)
+                    .enter()
+                    .append("text")
+					.attr("class","textLabel")
+                    .text(function (d) {
+					if (d.Type == "area"){return d.ID;}
+					if (d.Type == "mmm"){return d.ID;}
+					return "";
+					})
+                   .style("text-anchor", "middle")
+                    .style("fill", "white")
+                    //.style("font-family", "Arial")
+                    .style("font-size", 10);
+    
+	
+	
+	
+//What happens on tick of simulation
+function tickActions(){
+node.attr("cx", function(d) { return d.x;})
+        .attr("cy", function(d) { return d.y;});
+	
+	regNode.attr("cx", function(d) { return d.x;})
+        .attr("cy", function(d) { return d.y;});
+	
+link
+	.attr("x1", function(d){return d.source.x;})
+	.attr("y1", function(d) {return d.source.y;})
+	.attr("x2", function(d){return d.target.x;})
+	.attr("y2", function(d) {return d.target.y;});
+	
+label
+	.attr("x", function(d){return d.x;})
+	.attr("y", function(d){return d.y+4;});
+
+}
+
+	
+
+
+
+	
+	
+var drag_handler = d3.drag()
+	.on("start", drag_start)
+	.on("drag", drag_drag)
+	.on("end", drag_end);
+	
+function drag_start(d) {
+simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+ 
+function drag_drag(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+ 
+function drag_end(d) {
+  simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+	
+drag_handler(node);
+
+
+
+//##############################
+// DRAW KEY	
+//##############################
+
+	var keyElements = svg.append("g");
+
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*2+3}).text("4 ECTS").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*2}).attr("r",rScale(4)).attr("fill","#ff7f0e").attr("stroke", "black").attr("stroke-width", "0.5px");
+
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*3+3}).text("6 ECTS").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*3}).attr("r",rScale(6)).attr("fill","#ff7f0e").attr("stroke", "black").attr("stroke-width", "0.5px");
+
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*4+3}).text("8 ECTS").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*4}).attr("r",rScale(8)).attr("fill","#ff7f0e").attr("stroke", "black").attr("stroke-width", "0.5px");
+
+	
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*5+3}).text("Registration Required").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*5}).attr("r",rScale(6)).attr("fill","#ff7f0e").attr("stroke", "black").attr("stroke-width", "0.5px");
+	keyElements.append("circle").attr("r", 2).attr("fill", "black").attr("cx",15).attr("cy",function(d,i){return 25+17*5});
+
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*6+4}).text("Course Language is German").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*6}).attr("r",5).attr("fill","#ff7f0e").attr("stroke", "white").attr("stroke-width", "2px");
+
+
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*7+4}).text("Course Language is English or German").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*7}).attr("r",5).attr("fill","#ff7f0e").attr("stroke", "grey").attr("stroke-width", "2px");
+	
+	keyElements.append("text").attr("x",25).attr("y",function(d,i){return 25+17*8+4}).text("Course Language is English").attr("fill", "white").attr("font-size","10");
+	keyElements.append("circle").attr("cx",15).attr("cy",function(d,i){return 25+17*8}).attr("r",5).attr("fill","#ff7f0e").attr("stroke", "none").attr("stroke-width", "2px");
+	
+	
+	keyElements.append("text").attr("x",10).attr("y",function(d,i){return 30}).text("Master of Management Courses at University of Mannheim:").attr("font-size","30").attr("fill", "white").attr("class","title");
+
+console.log(cScale("MMM"));
+
+//#############################
+//#############################
+//#############################
+}
+	
+</script>
+	
+	
+	
+  </body>
+</html>

@@ -1,0 +1,179 @@
+ID,Area,Number,Name,ECTS,Prereq,F/R,Parent,Term,Language,Anmeldepflicht,Type
+MMM,,,,,,,,,,,mmm
+MAN,MAN,,,,MMM,,MMM,,,,area
+CC,CC,,,,MMM,,MMM,,,,area
+ACC,ACC,,,,MMM,,MMM,,,,area
+BE,BE,,,,MMM,,MMM,,,,area
+OPM,OPM,,,,MMM,,MMM,,,,area
+FIN,FIN,,,,MMM,,MMM,,,,area
+TAX,TAX,,,,MMM,,MMM,,,,area
+MKT,MKT,,,,MMM,,MMM,,,,area
+IS,IS,,,,MMM,,MMM,,,,area
+OPM Seminar,OPM,,,,OPM,,OPM,,,,seminar
+FIN Seminar,FIN,,,,FIN,,FIN,,,,seminar
+TAX Seminar,TAX,,,,TAX,,TAX,,,,seminar
+MKT Seminar,MKT,,,,MKT,,MKT,,,,seminar
+IS Seminar,IS,,,,IS,,IS,,,,seminar
+MAN Seminar,MAN,,,,MAN,,MAN,,,,seminar
+ACC Seminar,ACC,,,,ACC,,ACC,,,,seminar
+CC 501,CC,501,Decision Analysis,6,,,CC,fs,e,,cource
+CC 502,CC,502,Applied Econometrics,6,,,CC,f,e,,cource
+CC 503,CC,503,Empirische Methoden,6,,,CC,fs,e,,cource
+CC 504,CC,504,Corporate Social Responsibility,4,,,CC,fs,e,,cource
+BE 510,BE,510,Business Economics I,6,,,BE,f,e,,cource
+BE 511,BE,511,Business Economics II,6,BE 510,r,BE 510,s,e,,cource
+ACC 511,ACC,511,Konzernrechnungslegung,6,,,ACC,f,e,,cource
+ACC 512,ACC,512,Jahresabschluss,6,,,ACC,s,d,,cource
+ACC 513,ACC,513,Konzernrechnungslegungspraxis,4,,,ACC,fs,d,,cource
+ACC 531,ACC,531,Unternehmensbewertung,6,,,ACC,f,d,,cource
+ACC 532,ACC,532,Financial Statement Analysis & Equity Valuation,6,,,ACC,s,e,,cource
+TAX 510,TAX,510,Grundlagen der Besteuerung,6,,,TAX,f,d,,cource
+TAX 520,TAX,520,Besteuerung der Unternehmen,6,TAX 510,r,TAX 510,f,d,n,cource
+TAX 521,TAX,521,Fallstudien zur Besteuerung der Unternehmen,4,,,TAX,s,d,n,cource
+TAX 530,TAX,530,Taxation of Businesses and Individuals,6,,,TAX,f,e,n,cource
+ACC/TAX 550,ACC/TAX,550,International Course – Accounting and Taxation,x,TAX ACC,,TAX ACC,fs,e,,cource
+ACC 620,ACC,620,Accounting for Financial Instruments & Financial Institutions,6,,,ACC,s,e,n,cource
+ACC 624,ACC,624,Unternehmensbewertungspraxis,8,ACC 531 ACC 532 FIN 540,f,ACC 531 ACC 532 FIN 540,f,d,j,cource
+ACC 630,ACC,630,Integriertes Controlling 1 – Planung und Budgetierung,4,,,ACC,f,d,n,cource
+ACC 631,ACC,631,Integriertes Controlling 2 – Reporting und Performancesteuerung,4,,,ACC,s,d,n,cource
+ACC 635,ACC,635,Wertorientiertes Risiko-Controlling und - Management im Bankbereich,4,,,ACC,f,d,n,cource
+ACC 636,ACC,636,Fallstudien für das wertorientierte RisikoControlling und -Management im Bankbereich,4,ACC 635,f,ACC 635,s,d,j,cource
+TAX 610,TAX,610,Internationale Unternehmensbesteuerung,6,TAX 510 TAX 520 TAX 530,r,TAX 510 TAX 520 TAX 530,s,d,n,cource
+TAX 611,TAX,611,Fallstudien zur Internationalen Unternehmensbesteuerung,4,TAX 510 TAX 520 TAX 530,r,TAX 510 TAX 520 TAX 530,f,d,n,cource
+TAX 620,TAX,620,Empirical Research in Taxation,6,,,TAX,f,e,n,cource
+TAX 630,TAX,630,International Business Taxation,6,TAX 510 TAX 520 TAX 530,r,TAX 510 TAX 520 TAX 530,s,e,n,cource
+TAX 650,TAX,650,European Business Taxation,6,TAX 510 TAX 520 TAX 530,r,TAX 510 TAX 520 TAX 530,s,e,j,cource
+TAX 660,TAX,660,Steuerwirkung und Steuerplanung,6,TAX 510 TAX 520 TAX 530 TAX 610 TAX 630,r,TAX 510 TAX 520 TAX 530 TAX 610 TAX 630,f,d,n,cource
+TAX 670,TAX,670,International Tax Planning,6,TAX 610 TAX 630,r,TAX 610 TAX 630,f,e,n,cource
+ACC 761,ACC,761,Seminar Accounting and Capital Markets,6,ACC Seminar,,ACC Seminar,f,ed,j,cource
+TAX 730,TAX,730,Seminar in Betriebswirtschaftlicher Steuerlehre,6,ACC Seminar,r,ACC Seminar,fs,ed,j,cource
+FIN 500,FIN,500,Investments,6,,,FIN,f,e,n,cource
+FIN 540,FIN,540,Corporate Finance I - Vorlesung(Kapitalstruktur  Kapitalkosten und Bewertung),5,,,FIN,f,e,n,cource
+FIN 541,FIN,541,Corporate Finance I - Fallstudie(Kapitalstruktur  Kapitalkosten und Bewertung),5,FIN 540,r,FIN 540,f,e,j,cource
+FIN 560,FIN,560,Risikomanagement von Versicherungsunternehmen,8,,,FIN,f,d,n,cource
+FIN 561,FIN,561,Investmentmanagement von Versicherungsunternehmen,8,,,FIN,s,d,n,cource
+FIN 580,FIN,580,Derivatives I: Strategien und Bewertung,6,,,FIN,f,e,n,cource
+FIN 550,FIN,550,International Course – Banking  Finance and Insurance,x,,,FIN,fs,e,n,cource
+FIN 601,FIN,601,Bond Markets,6,FIN 500,r,FIN 500,s,e,n,cource
+FIN 620,FIN,620,Behavioral Finance,6,CC 501 FIN 500 FIN 540 FIN 560 FIN 561 FIN 580 FIN 550,f,CC 501 FIN 500 FIN 540 FIN 560 FIN 561 FIN 580 FIN 550,s,e,n,cource
+FIN 630,FIN,630,Corporate Governance,6,,,FIN,f,e,n,cource
+FIN 640,FIN,640,Corporate Finance II (Mergers  Acquisitions and Divesititures),10,FIN 540 FIN 541,f,FIN 540 FIN 541,s,e,j,cource
+FIN 703,FIN,703,Seminar in Financial Markets,6,FIN Seminar,f,FIN Seminar,fs,ed,j,cource
+FIN 720,FIN,720,Seminar in Bankbetriebslehre und Behavioral Finance,6,FIN Seminar,f,FIN Seminar,fs,ed,j,cource
+FIN 740,FIN,740,Corporate Finance Seminar,6,FIN Seminar,f,FIN Seminar,s,e,j,cource
+FIN 760,FIN,760,Seminar in Risikomanagement und Versicherung,6,FIN Seminar,f,FIN Seminar,fs,d,j,cource
+FIN 780,FIN,780,Seminar in Asset Management & International Finance,6,FIN Seminar,f,FIN Seminar,fs,e,j,cource
+IS 510,IS,510,Prozessmanagement,6,,,IS,s,e,j,cource
+IS 512,IS,512,IT Management in the Digital Age,6,,,IS,s,e,j,cource
+IS 513,IS,513,Applied IT Management in the Digital Age,6,IS 512,f,IS 512,f,e,j,cource
+IS 541,IS,541,Theories and Methods in Information Systems,6,,,IS,s,e,j,cource
+IS 540,IS,540,Management of Enterprise Systems,6,,,IS,f,e,j,cource
+IS 553,IS,553,System Software,6,IS 554,r,IS 554,f,e,n,cource
+IS 554,IS,554,Computational Thinking,8,,,IS,f,e,n,cource
+IS 555,IS,555,Computational Thinking II,4,IS 554,r,IS 554,s,e,n,cource
+IS 550,IS,550,International Course – Information Systems,6,,,IS,fs,e,n,cource
+IS 602,IS,602,Business Intelligence and Management Support Systems,6,IS 540,r,IS 540,f,e,n,cource
+IS 613,IS,613,Applied Project in Design Thinking and Lean Software Development,6,IS 615,r,IS 615,f,e,j,cource
+IS 614,IS,614,Betriebliches Wissensmanagement,6,,,IS,f,e,n,cource
+IS 625,IS,625,Pervasive Computing,6,IS 554,r,IS 554,s,e,n,cource
+IS 627,IS,627,Self-organizing Systems,6,IS 554,r,IS 554,f,e,n,cource
+IS 629,IS,629,Product Management and Product Design for Software,6,IS 540,r,IS 540,s,e,j,cource
+IS 651,IS,651,Behavioral Perspectives on E-Business,4,,,IS,f,e,n,cource
+IS 712,IS,712,Seminar Prof. Heinzl,6,IS Seminar,,IS Seminar,fs,e,j,cource
+IS 722,IS,722,Seminar Trends in Distributed Systems,6,IS Seminar,r,IS Seminar,fs,e,j,cource
+IS 742,IS,742,Seminar: Enterprise Systems,6,IS Seminar,r,IS Seminar,f,e,j,cource
+MAN 550,MAN,550,International Course – Management,6,,,MAN,fs,e,n,cource
+MAN 630,MAN,630,Introduction to Entrepreneurship,6,,,MAN,f,e,j,cource
+MAN 632,MAN,632,Advanced Entrepreneurship,6,,,MAN,s,e,j,cource
+MAN 633,MAN,633,Entrepreneurial Spirit,6,MAN 630 MAN 631 MAN 632,r,MAN 630 MAN 631 MAN 632,fs,e,j,cource
+MAN 645,MAN,645,Leadership and Motivation,6,,,MAN,f,e,n,cource
+MAN 646,MAN,646,HR Analytics,6,MAN 645 MAN 647,r,MAN 645 MAN 647,f,d,j,cource
+MAN 647,MAN,647,Strategic and International Human Resource Management,6,,,MAN,s,e,j,cource
+MAN 648,MAN,648,Incentives and Performance,6,MAN 645 MAN 647,r,MAN 645 MAN 647,s,e,j,cource
+MAN 654,MAN,654,Corporate Restructuring,6,,,MAN,s,e,j,cource
+MAN 655,MAN,655,Corporate Strategy: Managing Business Groups,6,,,MAN,s,e,j,cource
+MAN 656,MAN,656,Mergers & Acquisitions,6,,,MAN,f,e,j,cource
+MAN 657,MAN,657,Global Strategic Management,6,MAN 655,r,MAN 655,f,e,j,cource
+MAN 660,MAN,660,CSR Video-Dokumentation,6,CC 504,r,CC 504,fs,e,j,cource
+MAN 679,MAN,679,Eine wissenschaftliche Einführung in das Public und Nonprofit Management,6,,,MAN,f,d,n,cource
+MAN 680,MAN,680,Herausforderungen des Public und Nonprofit Management - Fallstudienseminar,6,,,MAN,s,d,j,cource
+MAN 690,MAN,690,Innovationsmanagement,6,,,MAN,s,e,n,cource
+MAN 691,MAN,691,Ausgewählte Aspekte des Verhaltens in Organisationen,4,,,MAN,s,e,j,cource
+MAN 692,MAN,692,Organisationstheorie,6,,,MAN,f,d,n,cource
+MAN 693,MAN,693,Strategisches Intellectual Property Management,4,,,MAN,f,e,j,cource
+MAN 721,MAN,721,Forschungsseminar Organisation und Innovation,6,MAN Seminar,f,MAN Seminar,fs,d,j,cource
+MAN 741,MAN,741,Research Seminar on Human Resource Management and Leadership,6,MAN Seminar,,MAN Seminar,fs,ed,j,cource
+MAN 750,MAN,750,Seminar Corporate Strategy & Governance,6,MAN Seminar,f,MAN Seminar,fs,e,j,cource
+MAN 761,MAN,761,CSR Research Seminar,6,CC 504 MAN Seminar,r,CC 504 MAN Seminar,fs,e,j,cource
+MAN 770,MAN,770,Research Seminar,6,MAN Seminar,f,MAN Seminar,fs,ed,j,cource
+MKT 510,MKT,510,Price and Product Management,6,,,MKT,f,e,n,cource
+MKT 520,MKT,520,Market Research,6,CC 503,r,CC 503,s,e,n,cource
+MKT 531,MKT,531,Marketing Theory,4,,,MKT,s,e,n,cource
+MKT 545,MKT,545,Customers  Markets and Firm Strategy,6,,,MKT,s,e,n,cource
+MKT 560,MKT,560,Services Marketing,4,,,MKT,f,e,n,cource
+MKT 580,MKT,580,Digital Marketing Strategy,4,,,MKT,f,e,j,cource
+MKT 550,MKT,550,International Course – Marketing,6,,,MKT,fs,e,n,cource
+MKT 611,MKT,611,Sales Management and Customer Relationship Management,4,MKT 510,r,MKT 510,s,e,n,cource
+MKT 612,MKT,612,Business-to-Business-Marketing,2,MKT 510,r,MKT 510,f,e,n,cource
+MKT 614,MKT,614,Communications Management,4,,,MKT,s,e,n,cource
+MKT 621,MKT,621,Global Marketing,4,,,MKT,s,e,j,cource
+MKT 622,MKT,622,Country Manager,2,,,MKT,s,e,j,cource
+MKT 623,MKT,623,Strategische Marketing Management Simulation,2,,,MKT,f,e,j,cource
+MKT 710,MKT,710,Forschungsseminar,6,MKT Seminar,f,MKT Seminar,fs,ed,j,cource
+MKT 720,MKT,720,Marketingseminar,6,MKT Seminar,f,MKT Seminar,fs,ed,j,cource
+MKT 730,MKT,730,Marketing Seminar Prof. Kuester,6,MKT Seminar,f,MKT Seminar,fs,ed,j,cource
+MKT 740,MKT,740,Forschungsseminar,6,MKT Seminar,f,MKT Seminar,fs,e,j,cource
+OPM 501,OPM,501,Logistics Management,6,,,OPM,f,e,n,cource
+OPM 502,OPM,502,Inventory Management,6,,,OPM,f,e,n,cource
+OPM 503,OPM,503,Verkehrsbetriebslehre I - Landverkehr und Schifffahrt,4,,,OPM,s,d,n,cource
+OPM 504,OPM,504,Verkehrsbetriebslehre II - Luftverkehr,4,,,OPM,f,d,n,cource
+OPM 561,OPM,561,Production Management: Lean Approaches and Variability,6,,,OPM,f,e,n,cource
+OPM 581,OPM,581,Service Operations Management,6,,,OPM,s,e,n,cource
+OPM 582,OPM,582,Case Studies in Service Operations Management,6,,,OPM,f,e,j,cource
+OPM 591,OPM,591,Strategic Procurement,6,,,OPM,f,e,n,cource
+OPM 550,OPM,550,International Course – Operations Management,6,,,OPM,fs,e,n,cource
+OPM 601,OPM,601,Supply Chain Management,6,OPM 501 OPM 502 OPM 561 OPM 581,f,OPM 501 OPM 502 OPM 561 OPM 581,s,e,n,cource
+OPM 661,OPM,661,Business Analytics: Robust Planning in Stochastic Systems,6,OPM 501 OPM 502 OPM 561 OPM 581,f,OPM 501 OPM 502 OPM 561 OPM 581,s,e,n,cource
+OPM 662,OPM,662,Business Analytics: Modeling and Optimization,6,OPM 561,f,OPM 561,f,e,j,cource
+OPM 682,OPM,682,Revenue Management,6,OPM 501 OPM 502 OPM 561 OPM 581 OPM 582,f,OPM 501 OPM 502 OPM 561 OPM 581 OPM 582,s,e,n,cource
+OPM 691,OPM,691,Supply Risk Management,4,,,OPM,f,e,n,cource
+OPM 692,OPM,692,Advanced Procurement,6,OPM 591,r,OPM 591,s,e,n,cource
+OPM 701,OPM,701,Research Seminar Supply Chain Management,6,OPM Seminar,f,OPM Seminar,fs,ed,j,cource
+OPM 761,OPM,761,Research Seminar Production Management,6,OPM Seminar,f,OPM Seminar,fs,e,j,cource
+OPM 781,OPM,781,Research Seminar Service Operations,6,OPM Seminar,f,OPM Seminar,fs,ed,j,cource
+ACC 514,ACC,514,International Financial Reporting & Analysis,4,,,ACC,f,e,j,cource
+ACC 573,ACC,573,Ausgewählte Fragen der IFRS-Rechnungslegung,4,,,ACC,f,d,n,cource
+ACC 626,ACC,626,Transaction Accounting,4,,,ACC,s,d,n,cource
+ACC 627,ACC,627,Fallstudien „Beratung von Finanzdienstleistern“,8,,,ACC,s,d,j,cource
+TAX 661,TAX,661,Case Studies in International Tax Planning,4,TAX 610 TAX 630,r,TAX 610 TAX 630,s,e,n,cource
+ACC 711,ACC,711,Seminar,6,ACC Seminar,,ACC Seminar,s,ed,j,cource
+ACC 713,ACC,713,Seminar,6,ACC Seminar,,ACC Seminar,fs,ed,j,cource
+FIN 520,FIN,520,Bankbetriebslehre,12,,,FIN,f,d,n,cource
+FIN 602,FIN,602,Trading and Exchanges,6,FIN 500,r,FIN 500,f,e,n,cource
+FIN 603,FIN,603,Empirical Finance,10,CC 502 CC 503,r,CC 502 CC 503,s,e,j,cource
+FIN 610,FIN,610,Risk Management in Banks and Financial Institutions,4,,,FIN,f,e,n,cource
+FIN 660,FIN,660,Quantitatives Risikomanagement,4,,,FIN,fs,ed,n,cource
+FIN 682,FIN,682,International Asset Management,6,FIN 500,r,FIN 500,s,e,n,cource
+FIN 705,FIN,705,Seminar “Topics in Empirical Asset Pricing,6,FIN Seminar,,FIN Seminar,fs,e,j,cource
+FIN 731,FIN,731,Seminar Corporate Governance,6,FIN Seminar,,FIN Seminar,s,e,j,cource
+FIN 750,FIN,750,Seminar in Finanzsysteme und Entwicklungsfinanzierung,6,FIN Seminar,,FIN Seminar,s,ed,j,cource
+IS 615,IS,615,Design Thinking and Lean Development in Enterprise Software Development,6,IS 550,r,IS 550,f,e,n,cource
+MAN 631,MAN,631,Creativity and Entrepreneurship in Practice,6,,,MAN,f,e,j,cource
+MAN 635,MAN,635,Social Entrepreneurship: Targeting Social Capital through Ecopreneurship,6,,,MAN,f,e,j,cource
+MAN 636,MAN,636,International Entrepreneurship and Managing Change,6,,,MAN,s,e,j,cource
+MAN 661,MAN,661,Startery University - Social Entrepreneurship Seminar,6,MAN Seminar,,MAN Seminar,s,e,j,cource
+MAN 694,MAN,694,Project Course IMP3rove – Innovation Management in Practice,6,MAN 690,r,MAN 690,f,e,j,cource
+MAN 711,MAN,711,Forschungsseminar „Qualitative Methoden in der Public & Nonprofit ManagementForschung“,6,MAN Seminar,,MAN Seminar,s,ed,j,cource
+MAN 712,MAN,712,Forschungsseminar „Quantitative Methoden in der Public & Nonprofit ManagementForschung“,6,MAN Seminar,,MAN Seminar,f,ed,j,cource
+MKT 613,MKT,613,Verhandlungsführung,2,,,MKT,f,d,j,cource
+MKT 661,MKT,661,Consumer Behavior,2,MKT 531,r,MKT 531,s,e,n,cource
+MKT 662,MKT,662,Interactive Marketing,6,,,MKT,s,e,n,cource
+MKT 663,MKT,663,Branding and Brand Management,4,,,MKT,s,e,n,cource
+MKT 664,MKT,664,Brand Strategy Seminar,2,MKT Seminar,f,MKT Seminar,f,e,j,cource
+OPM 544,OPM,544,Demand-Driven Adaptive Supply Chain Planning,4,OPM 501 OPM 502 OPM 561,r,OPM 501 OPM 502 OPM 561,f,e,j,cource
+OPM 545,OPM,545,Cases on Current Issues in Supply Chain Management,4,OPM 501 OPM 502 OPM 561,r,OPM 501 OPM 502 OPM 561,s,e,j,cource
+OPM 546,OPM,546,Innovation Management & Operations,4,,,OPM,s,e,j,cource
+OPM 547,OPM,547,Technology and Operations Strategy,4,,,OPM,f,e,n,cource
+OPM 565,OPM,565,Integrierte Produktentwicklung,4,,,OPM,s,d,j,cource
+OPM 791,OPM,791,Research Seminar Procurement,6,OPM Seminar,,OPM Seminar,f,e,j,cource
+OPM 792,OPM,792,Applied Seminar Procurement,6,OPM Seminar,,OPM Seminar,s,ed,j,cource
